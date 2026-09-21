@@ -1,0 +1,41 @@
+# Private planning sources (keep local)
+/docx/
+**/기획안*
+**/기획서*
+*.doc
+*.docx
+*.hwp
+*.hwpx
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+test-results/
+playwright-report/
+.cache/
+.godot/
+
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+.local/
+.codex/
+.agents/
+AGENTS.md
+.vscode/
+.idea/
+
+# Logs, temporary files and OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+~$*
