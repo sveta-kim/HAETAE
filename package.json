@@ -1,0 +1,14 @@
+{
+  "name": "project-haetae",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "한국 설화와 터미널 명령어를 결합한 2D 픽셀 액션 게임",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "start": "node scripts/server.mjs",
+    "test": "node --test",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

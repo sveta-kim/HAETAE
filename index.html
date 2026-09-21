@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1218" />
+  <meta name="description" content="디지털 도사 설매화가 되어 금지된 성역 소도에 잠입하세요. 한국 설화와 해킹을 결합한 2D 픽셀 액션, HAETAE." />
+  <title>HAETAE — 금지된 성역</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="HAETAE 시작 화면"><img src="/assets/favicon.svg" alt="" /><span>HAETAE<small>PROJECT 해태</small></span></a>
+      <div class="header-location"><span class="status-dot"></span> SODO NETWORK <span class="separator">/</span> <span class="muted">외부 접속</span></div>
+      <nav aria-label="게임 설정">
+        <button id="help-button" class="quiet-button"><span aria-hidden="true">?</span> 작전 안내</button>
+        <button id="sound-button" class="icon-button" aria-label="소리 끄기" title="소리 끄기" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 5L6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 010 8M18 5a10 10 0 010 14"/></svg></button>
+        <button id="fullscreen-button" class="icon-button" aria-label="전체 화면" title="전체 화면"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></svg></button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="mission-heading"><div><span class="eyebrow">OPERATION 01 <span>/</span> THE FORBIDDEN SANCTUARY</span><h1>금지된 성역, 소도</h1></div><div class="build-label"><span class="status-dot"></span> PLAYABLE PROTOTYPE <b>v0.1</b></div></div>
+
+      <section class="game-stage" id="game-stage" aria-label="HAETAE 게임 화면">
+        <canvas id="game" width="960" height="540" tabindex="0" aria-label="횡스크롤 액션 게임. 이동 A D, 점프 Space, 공격 좌클릭, 강화 공격 우클릭. 자세한 조작은 작전 안내를 확인하세요."></canvas>
+        <div class="scanlines" aria-hidden="true"></div>
+        <div id="hud" class="hud" hidden>
+          <div class="player-hud"><span class="portrait" aria-hidden="true">兌</span><div><div class="hud-label"><b>설매화</b><span>HAE_TAE</span></div><div class="meter health"><i id="health-fill"></i></div><div class="meter energy"><i id="energy-fill"></i></div><span id="energy-text" class="energy-number">기력 100</span></div><span id="hp-text" class="hp-number">체력 150</span></div>
+          <div class="level-hud"><span id="level-counter">01 / 04</span><b id="level-name">방화벽 · 해자</b><button class="icon-button" id="pause-button" aria-label="일시 정지" title="일시 정지 (Esc)">Ⅱ</button></div>
+        </div>
+        <div id="boss-hud" class="boss-hud" hidden><div><b id="boss-name"></b><span>SECURITY PROCESS</span></div><div class="meter"><i id="boss-fill"></i></div></div>
+        <div id="game-message" class="game-message" role="status" hidden></div>
+        <div id="game-hint" class="game-hint" hidden></div>
+        <div id="buff-status" class="buff-status" hidden><div class="buff-heading"><b id="buff-name"></b><span id="buff-time"></span></div><p id="buff-effect"></p><div class="buff-meter"><i id="buff-fill"></i></div></div>
+        <section id="tutorial-panel" class="tutorial-panel" aria-label="부적 실습" hidden>
+          <div class="tutorial-heading"><span id="tutorial-category">옥추선의 수련 기록</span><span id="tutorial-progress"></span></div>
+          <h2 id="tutorial-title"></h2><p id="tutorial-intro"></p>
+          <div class="tutorial-step"><span id="tutorial-key" class="tutorial-key"></span><div><h3 id="tutorial-step-title"></h3><p id="tutorial-description"></p></div></div>
+          <div id="tutorial-goal" class="tutorial-goal"></div><div id="tutorial-feedback" class="tutorial-feedback" role="status" aria-live="polite"></div>
+          <div class="tutorial-footer"><span id="tutorial-safety">수련 중에는 피해를 받지 않습니다.</span><button id="tutorial-skip" class="quiet-button">나중에 배우기 ↗</button><button id="tutorial-finish" class="primary-button" hidden>F · 수련 마치기 →</button></div>
+        </section>
+        <div id="fullscreen-toolbar" class="fullscreen-toolbar" hidden aria-label="전체 화면 조작"><div><button data-quick-talisman="0">1 주작</button><button data-quick-talisman="1">2 청룡</button><button data-quick-talisman="2">3 백호</button><button data-quick-talisman="3">4 현무</button><button data-quick-talisman="4">5 기린</button></div><button id="exit-fullscreen" aria-label="전체 화면 종료">나가기 ↙</button></div>
+
+        <div class="title-overlay" id="title-overlay">
+          <div class="title-content"><span class="chapter-tag"><i></i> DIGITAL FOLKLORE / ACTION</span><div class="game-wordmark">HAETAE<span>해 태</span></div><p class="title-korean">선과 악의 경계에서,<br />당신의 명령을 기다립니다.</p><p class="title-description">디지털 도사 설매화.<br />다섯 신수의 힘으로 부패한 시스템을 심판하라.</p><div class="start-actions"><button id="start-button" class="primary-button">소도에 접속 <span aria-hidden="true">↗</span></button><button id="continue-button" class="secondary-button" hidden>기록 이어하기</button></div><span class="title-footnote">4개의 구역 · 5개의 부적 · 3개의 운명</span></div>
+          <div class="scene-caption"><span>37°34′ N / 126°58′ E</span><b>서버 소도</b><span>비인가 접근을 감지했습니다_</span></div>
+        </div>
+
+        <div id="state-overlay" class="state-overlay" hidden><div class="state-card"><span id="state-eyebrow" class="eyebrow"></span><h2 id="state-title"></h2><p id="state-description"></p><div id="state-actions" class="state-actions"></div><pre id="ending-report" hidden></pre></div></div>
+        <div class="stage-corner top-left" aria-hidden="true"></div><div class="stage-corner bottom-right" aria-hidden="true"></div>
+      </section>
+
+      <div class="touch-controls" id="touch-controls" aria-label="터치 조작"><div><button data-input="left" aria-label="왼쪽 이동">◀</button><button data-input="right" aria-label="오른쪽 이동">▶</button></div><div><button data-input="jump">점프</button><button data-input="dash">대시</button><button data-input="attack">공격</button><button data-input="enhancedAttack">강화 공격</button><button data-input="cast">Q 발동</button><button data-input="enchant">E 강화</button><button data-input="interact">F 조사</button></div></div>
+
+      <section class="console-grid" aria-label="부적과 임무">
+        <div class="talisman-console"><div class="console-heading"><h2>사방신의 부적 <span>TALISMANS</span></h2><span id="selected-command" class="mono">rm _</span></div><div class="talisman-list" id="talisman-list">
+          <button class="talisman selected" data-talisman="0" style="--talisman:#fa7977" aria-label="1 주작 선택" aria-pressed="true"><span class="talisman-key">1</span><span class="talisman-glyph">朱</span><span class="talisman-name">주작<small>rm</small></span><span class="talisman-state">장착</span></button>
+          <button class="talisman" data-talisman="1" style="--talisman:#69bddf" aria-label="2 청룡 선택" aria-pressed="false"><span class="talisman-key">2</span><span class="talisman-glyph">龍</span><span class="talisman-name">청룡<small>cd</small></span><span class="talisman-state">사용 가능</span></button>
+          <button class="talisman locked" data-talisman="2" style="--talisman:#dce2e5" aria-label="3 백호 미획득" aria-disabled="true" aria-pressed="false"><span class="talisman-key">3</span><span class="talisman-glyph">虎</span><span class="talisman-name">백호<small>ls -a</small></span><span class="talisman-state">미획득</span></button>
+          <button class="talisman locked" data-talisman="3" style="--talisman:#a49bd2" aria-label="4 현무 미획득" aria-disabled="true" aria-pressed="false"><span class="talisman-key">4</span><span class="talisman-glyph">武</span><span class="talisman-name">현무<small>chmod</small></span><span class="talisman-state">미획득</span></button>
+          <button class="talisman locked" data-talisman="4" style="--talisman:#dfbd77" aria-label="5 기린 미획득" aria-disabled="true" aria-pressed="false"><span class="talisman-key">5</span><span class="talisman-glyph">麟</span><span class="talisman-name">기린<small>su -</small></span><span class="talisman-state">미획득</span></button>
+        </div><div id="ability-details" class="ability-details"><div class="ability-heading"><span id="ability-title">주작의 두 가지 사용법</span><button id="replay-tutorial" class="quiet-button" disabled>선택한 부적 연습 ↗</button></div><div class="ability-actions"><div data-ability-action="attack"><kbd>좌클릭</kbd><div><b>부채 기본 공격</b><p id="ability-basic">마우스 방향으로 기본 탄을 발사합니다. 기력을 쓰지 않습니다.</p></div></div><div data-ability-action="cast"><kbd>Q</kbd><div><b id="ability-cast-title">부적 발동</b><p id="ability-cast-description"></p><small id="ability-cast-state"></small></div></div><div data-ability-action="enhancedAttack"><kbd>우클릭</kbd><div><b id="ability-enchant-title">부채 강화</b><p id="ability-enchant-description"></p><small id="ability-enchant-state"></small></div></div></div></div></div>
+        <aside class="mission-console"><div class="console-heading"><h2>현재 임무 <span>OBJECTIVE</span></h2><span class="status-dot"></span></div><p id="objective">소도의 경계를 넘어 잠입을 시작하세요.</p><div class="conscience-row"><span>양심 <b id="conscience-value">100%</b></span><span>기억 <b id="memories-value">00</b></span><div class="conscience-meter"><i id="conscience-fill"></i></div></div></aside>
+      </section>
+
+      <div class="controls-strip" aria-label="조작 안내"><span><kbd>A</kbd><kbd>D</kbd> 이동</span><span><kbd>SPACE</kbd> 2단 점프</span><span><kbd>좌클릭</kbd> 기본 공격</span><span><kbd>SHIFT</kbd> 대시</span><span><kbd>Q</kbd> 부적 발동</span><span><kbd>우클릭</kbd> 강화 공격</span><span><kbd>휠 / 1–5</kbd> 부적 선택</span><span><kbd>F</kbd> 조사</span><button class="quiet-button" id="controls-help">전체 조작법 ↗</button></div>
+    </main>
+    <footer><span>© PROJECT HAETAE <i>/</i> 한국 설화, 디지털 세계를 만나다.</span><span id="save-status">LOCAL SESSION <span class="status-dot"></span></span></footer>
+  </div>
+
+  <dialog id="help-dialog"><div class="help-header"><span class="eyebrow">FIELD MANUAL / 작전 안내</span><button id="close-help" class="icon-button" aria-label="작전 안내 닫기">×</button></div><h2>소도에 들어가기 전에</h2><p class="help-intro">당신은 디지털 도사 설매화입니다. 적을 제압하고 기억을 지키며, 소도의 코어에 도달하세요.</p><div class="help-columns"><section><h3>기본 조작</h3><dl><div><dt>이동</dt><dd>A D / ← →</dd></div><div><dt>2단 점프</dt><dd>Space / W / ↑</dd></div><div><dt>기본 공격 / 강화 공격</dt><dd>좌클릭 / 우클릭 · 누르고 있으면 연사</dd></div><div><dt>대시</dt><dd>Shift</dd></div><div><dt>부적 선택</dt><dd>1 – 5 / 휠 위: 앞 번호, 아래: 뒷 번호 (미획득 건너뛰기)</dd></div><div><dt>선택한 부적의 술법</dt><dd>Q</dd></div><div><dt>공격 없이 강화만 준비</dt><dd>E (우클릭은 자동 강화 후 발사)</dd></div><div><dt>기억·장치·출구 조사</dt><dd>F</dd></div><div><dt>일시 정지 / 안내</dt><dd>Esc 또는 P / H</dd></div></dl></section><section><h3>다섯 신수의 힘</h3><p><b class="red">주작 · rm</b> 화염으로 적과 장애물을 지웁니다. 시민의 기억 가까이에서는 조심하세요.</p><p><b class="blue">청룡 · cd</b> 푸른 전류로 주변을 탐색합니다. 인챈트하면 이동과 대시가 강화됩니다.</p><p><b>백호 · ls -a → sudo</b> 숨겨진 발판과 진실을 드러냅니다. 진화하면 잠긴 문을 엽니다.</p><p><b class="purple">현무 · chmod</b> 보호막을 펼쳐 공격을 막고 반사합니다.</p><p><b class="gold">기린 · su -</b> 국본을 쓰러뜨린 뒤 코어의 운명을 결정합니다.</p></section></div><div class="help-notes"><p><b>마우스 조준</b> 게임 화면 안의 마우스 위치로 탄을 발사합니다. 벽·사물·첫 적에 맞으면 소멸합니다. 스캔과 방패는 조준 없이 사용하며 벽에 막히지 않습니다. 휠은 미획득 부적을 건너뛰고 보유한 부적끼리 번호 순서대로 순환합니다.</p><p><b>과열 관리</b> 인챈트가 끝나면 30초 동안 부채를 냉각해야 합니다. 이때도 기본 공격과 술법은 사용할 수 있습니다.</p><p><b>양심과 기억</b> 일반 적 처치는 양심을 낮추지 않습니다. 시민 기억 파괴 −5, 문 폭파 −2, 시민 협박 −20. 정화와 양심 75%가 엔딩을 가릅니다.</p><p><b>기록 저장</b> 구역 진입과 체크포인트에서 브라우저에 자동 저장합니다. 실패하면 마지막 체크포인트에서 재도전합니다.</p></div><button id="help-done" class="primary-button">준비 완료 <span>→</span></button></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <noscript>HAETAE를 플레이하려면 브라우저의 JavaScript를 활성화하세요.</noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
