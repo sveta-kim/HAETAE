@@ -1,0 +1,1098 @@
+{
+  "talismans": [
+    {
+      "id": "red",
+      "name": "주작",
+      "command": "rm",
+      "color": "#ff5b70",
+      "duration": 15
+    },
+    {
+      "id": "blue",
+      "name": "청룡",
+      "command": "cd",
+      "color": "#52d8ff",
+      "duration": 12
+    },
+    {
+      "id": "white",
+      "name": "백호",
+      "command": "ls -a",
+      "color": "#f0efff",
+      "duration": 15
+    },
+    {
+      "id": "black",
+      "name": "현무",
+      "command": "chmod",
+      "color": "#8e8bf8",
+      "duration": 12
+    },
+    {
+      "id": "gold",
+      "name": "기린",
+      "command": "su -",
+      "color": "#f5d182",
+      "duration": 0
+    }
+  ],
+  "levels": [
+    {
+      "name": "방화벽 · 해자",
+      "subtitle": "THE MOAT",
+      "theme": "moat",
+      "objective": "냉각 장치로 불가사리를 무력화하고 성문을 돌파하세요.",
+      "width": 3240,
+      "platforms": [
+        {
+          "x": 0,
+          "y": 460,
+          "w": 620,
+          "h": 28
+        },
+        {
+          "x": 620,
+          "y": 505,
+          "w": 170,
+          "h": 28
+        },
+        {
+          "x": 790,
+          "y": 460,
+          "w": 2450,
+          "h": 28
+        },
+        {
+          "x": 260,
+          "y": 370,
+          "w": 150,
+          "h": 28
+        },
+        {
+          "x": 490,
+          "y": 315,
+          "w": 140,
+          "h": 28
+        },
+        {
+          "x": 730,
+          "y": 326,
+          "w": 150,
+          "h": 18,
+          "hidden": true
+        },
+        {
+          "x": 930,
+          "y": 350,
+          "w": 155,
+          "h": 28
+        },
+        {
+          "x": 1710,
+          "y": 350,
+          "w": 170,
+          "h": 28
+        },
+        {
+          "x": 2210,
+          "y": 344,
+          "w": 160,
+          "h": 28
+        }
+      ],
+      "enemies": [
+        {
+          "id": "moat-p1",
+          "type": "pabal",
+          "name": "파발",
+          "x": 535,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 22,
+          "maxHp": 22,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "moat-s1",
+          "type": "sunra",
+          "name": "순라",
+          "x": 930,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 45,
+          "maxHp": 45,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "bulgasari",
+          "type": "bulgasari",
+          "name": "불가사리 · 코드 포식자",
+          "x": 1480,
+          "y": 366,
+          "w": 82,
+          "h": 94,
+          "hp": 180,
+          "maxHp": 180,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0,
+          "boss": true,
+          "phase": 1
+        },
+        {
+          "id": "moat-shield",
+          "type": "shield",
+          "name": "방패수",
+          "x": 2240,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 70,
+          "maxHp": 70,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "jangseung",
+          "type": "jangseung",
+          "name": "천하대장군 · 수문장",
+          "x": 2740,
+          "y": 366,
+          "w": 82,
+          "h": 94,
+          "hp": 200,
+          "maxHp": 200,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0,
+          "boss": true,
+          "phase": 1
+        }
+      ],
+      "objects": [
+        {
+          "id": "white",
+          "type": "talisman",
+          "x": 410,
+          "y": 405,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "value": 2,
+          "label": "낡은 백호 부적"
+        },
+        {
+          "id": "moat-memory-1",
+          "type": "memory",
+          "x": 500,
+          "y": 270,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "어느 시민의 일기"
+        },
+        {
+          "id": "moat-memory-2",
+          "type": "memory",
+          "x": 972,
+          "y": 307,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "나루터의 가족사진"
+        },
+        {
+          "id": "moat-check-1",
+          "type": "checkpoint",
+          "x": 1160,
+          "y": 400,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "격리 구역 접속점"
+        },
+        {
+          "id": "cooler",
+          "type": "cooler",
+          "x": 1340,
+          "y": 404,
+          "w": 48,
+          "h": 56,
+          "active": true,
+          "label": "냉각 장치 · 클릭 / F"
+        },
+        {
+          "id": "moat-npc",
+          "type": "npc",
+          "x": 1850,
+          "y": 410,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "길 잃은 기록지기"
+        },
+        {
+          "id": "moat-gate",
+          "type": "gate",
+          "x": 2430,
+          "y": 315,
+          "w": 34,
+          "h": 145,
+          "active": true,
+          "label": "잠긴 보안문",
+          "value": "key"
+        },
+        {
+          "id": "moat-check-2",
+          "type": "checkpoint",
+          "x": 2520,
+          "y": 400,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "성문 접속점"
+        },
+        {
+          "id": "moat-exit",
+          "type": "exit",
+          "x": 3100,
+          "y": 330,
+          "w": 78,
+          "h": 130,
+          "active": true,
+          "label": "장서각으로 · F"
+        }
+      ]
+    },
+    {
+      "name": "메모리 · 장서각",
+      "subtitle": "THE ARCHIVE",
+      "theme": "archive",
+      "objective": "백호로 진실을 밝히고 사관에게서 설계자의 기록을 되찾으세요.",
+      "width": 3260,
+      "platforms": [
+        {
+          "x": 0,
+          "y": 460,
+          "w": 3260,
+          "h": 28
+        },
+        {
+          "x": 280,
+          "y": 350,
+          "w": 190,
+          "h": 28
+        },
+        {
+          "x": 570,
+          "y": 300,
+          "w": 150,
+          "h": 24,
+          "moving": true
+        },
+        {
+          "x": 850,
+          "y": 350,
+          "w": 140,
+          "h": 28
+        },
+        {
+          "x": 1210,
+          "y": 325,
+          "w": 150,
+          "h": 18,
+          "hidden": true
+        },
+        {
+          "x": 1820,
+          "y": 355,
+          "w": 180,
+          "h": 28
+        },
+        {
+          "x": 2080,
+          "y": 290,
+          "w": 150,
+          "h": 28
+        },
+        {
+          "x": 2460,
+          "y": 345,
+          "w": 130,
+          "h": 28
+        }
+      ],
+      "enemies": [
+        {
+          "id": "archive-d1",
+          "type": "dokkaebi",
+          "name": "도깨비",
+          "x": 550,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 40,
+          "maxHp": 40,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "archive-s1",
+          "type": "sunra",
+          "name": "순라",
+          "x": 850,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 50,
+          "maxHp": 50,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "jangsan",
+          "type": "jangsan",
+          "name": "장산범 · 화이트 노이즈",
+          "x": 1430,
+          "y": 366,
+          "w": 82,
+          "h": 94,
+          "hp": 170,
+          "maxHp": 170,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0,
+          "boss": true,
+          "phase": 1
+        },
+        {
+          "id": "archive-d2",
+          "type": "dokkaebi",
+          "name": "도깨비",
+          "x": 2080,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 45,
+          "maxHp": 45,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "sagwan",
+          "type": "sagwan",
+          "name": "사관 · 기록하는 자",
+          "x": 2750,
+          "y": 366,
+          "w": 82,
+          "h": 94,
+          "hp": 220,
+          "maxHp": 220,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0,
+          "boss": true,
+          "phase": 1
+        }
+      ],
+      "objects": [
+        {
+          "id": "black",
+          "type": "talisman",
+          "x": 190,
+          "y": 405,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "value": 3,
+          "label": "현무 부적"
+        },
+        {
+          "id": "archive-memory-1",
+          "type": "memory",
+          "x": 320,
+          "y": 307,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "지워진 상소문"
+        },
+        {
+          "id": "shelf-switch",
+          "type": "cooler",
+          "x": 750,
+          "y": 412,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "책장 스위치 · 클릭 / F",
+          "value": "shelf"
+        },
+        {
+          "id": "archive-check-1",
+          "type": "checkpoint",
+          "x": 1120,
+          "y": 400,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "포인터 미로 접속점"
+        },
+        {
+          "id": "false-exit",
+          "type": "gate",
+          "x": 1260,
+          "y": 403,
+          "w": 45,
+          "h": 57,
+          "active": true,
+          "label": "이쪽이야…",
+          "value": "illusion"
+        },
+        {
+          "id": "father-record",
+          "type": "log",
+          "x": 1870,
+          "y": 307,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "설계자의 마지막 기록",
+          "value": "story"
+        },
+        {
+          "id": "archive-memory-2",
+          "type": "memory",
+          "x": 2130,
+          "y": 247,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "숙청된 시민 명부"
+        },
+        {
+          "id": "archive-npc",
+          "type": "npc",
+          "x": 2310,
+          "y": 410,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "갇힌 사서"
+        },
+        {
+          "id": "archive-check-2",
+          "type": "checkpoint",
+          "x": 2540,
+          "y": 400,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "사관 집무실 접속점"
+        },
+        {
+          "id": "archive-exit",
+          "type": "exit",
+          "x": 3120,
+          "y": 330,
+          "w": 78,
+          "h": 130,
+          "active": true,
+          "label": "근정전으로 · F"
+        }
+      ]
+    },
+    {
+      "name": "커널 · 근정전",
+      "subtitle": "THE KERNEL",
+      "theme": "kernel",
+      "objective": "백호의 권한을 깨우고, 아홉 꼬리와 국본의 통제를 해제하세요.",
+      "width": 3330,
+      "platforms": [
+        {
+          "x": 0,
+          "y": 460,
+          "w": 3330,
+          "h": 28
+        },
+        {
+          "x": 390,
+          "y": 354,
+          "w": 155,
+          "h": 28
+        },
+        {
+          "x": 840,
+          "y": 323,
+          "w": 155,
+          "h": 18,
+          "hidden": true
+        },
+        {
+          "x": 1600,
+          "y": 345,
+          "w": 170,
+          "h": 28
+        },
+        {
+          "x": 2140,
+          "y": 352,
+          "w": 150,
+          "h": 28
+        },
+        {
+          "x": 2700,
+          "y": 325,
+          "w": 160,
+          "h": 28
+        }
+      ],
+      "enemies": [
+        {
+          "id": "kernel-s1",
+          "type": "sunra",
+          "name": "황금 순라",
+          "x": 550,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 65,
+          "maxHp": 65,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "gumiho",
+          "type": "gumiho",
+          "name": "구미호 · 9중 암호화",
+          "x": 1140,
+          "y": 366,
+          "w": 82,
+          "h": 94,
+          "hp": 180,
+          "maxHp": 180,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0,
+          "boss": true,
+          "phase": 1,
+          "tails": 9
+        },
+        {
+          "id": "kernel-shield",
+          "type": "shield",
+          "name": "근위 방패수",
+          "x": 1910,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 85,
+          "maxHp": 85,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "kernel-d1",
+          "type": "dokkaebi",
+          "name": "근위 도깨비",
+          "x": 2230,
+          "y": 412,
+          "w": 34,
+          "h": 48,
+          "hp": 60,
+          "maxHp": 60,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0
+        },
+        {
+          "id": "root",
+          "type": "root",
+          "name": "국본 · THE ROOT",
+          "x": 2730,
+          "y": 366,
+          "w": 82,
+          "h": 94,
+          "hp": 280,
+          "maxHp": 280,
+          "facing": -1,
+          "attackTime": 0,
+          "alert": false,
+          "dead": false,
+          "timer": 0,
+          "boss": true,
+          "phase": 1
+        }
+      ],
+      "objects": [
+        {
+          "id": "tiger-awakening",
+          "type": "talisman",
+          "x": 220,
+          "y": 405,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "value": "evolve",
+          "label": "백호 각성 · sudo"
+        },
+        {
+          "id": "kernel-memory-1",
+          "type": "memory",
+          "x": 430,
+          "y": 311,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "소도의 첫 설계도"
+        },
+        {
+          "id": "kernel-check-1",
+          "type": "checkpoint",
+          "x": 860,
+          "y": 400,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "홍례문 접속점"
+        },
+        {
+          "id": "permission-gate",
+          "type": "gate",
+          "x": 1440,
+          "y": 292,
+          "w": 36,
+          "h": 168,
+          "active": true,
+          "label": "권한 필요 · sudo",
+          "value": "sudo"
+        },
+        {
+          "id": "kernel-memory-2",
+          "type": "memory",
+          "x": 1650,
+          "y": 302,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "매화에게 남긴 편지"
+        },
+        {
+          "id": "kernel-npc",
+          "type": "npc",
+          "x": 2070,
+          "y": 410,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "추방된 시민"
+        },
+        {
+          "id": "kernel-check-2",
+          "type": "checkpoint",
+          "x": 2450,
+          "y": 400,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "label": "근정전 접속점"
+        },
+        {
+          "id": "root-core",
+          "type": "core",
+          "x": 3090,
+          "y": 335,
+          "w": 70,
+          "h": 125,
+          "active": true,
+          "label": "루트 코어 · F"
+        }
+      ]
+    },
+    {
+      "name": "소멸의 나루터",
+      "subtitle": "THE LAST SESSION",
+      "theme": "escape",
+      "objective": "접속 로그를 지워 추격을 늦추고, 마지막 나루터에 도달하세요.",
+      "width": 2870,
+      "platforms": [
+        {
+          "x": 0,
+          "y": 460,
+          "w": 650,
+          "h": 28
+        },
+        {
+          "x": 650,
+          "y": 505,
+          "w": 160,
+          "h": 28
+        },
+        {
+          "x": 810,
+          "y": 460,
+          "w": 720,
+          "h": 28
+        },
+        {
+          "x": 1530,
+          "y": 505,
+          "w": 170,
+          "h": 28
+        },
+        {
+          "x": 1700,
+          "y": 460,
+          "w": 1170,
+          "h": 28
+        },
+        {
+          "x": 470,
+          "y": 355,
+          "w": 145,
+          "h": 28
+        },
+        {
+          "x": 1120,
+          "y": 340,
+          "w": 155,
+          "h": 28
+        },
+        {
+          "x": 1530,
+          "y": 383,
+          "w": 170,
+          "h": 18,
+          "hidden": true
+        },
+        {
+          "x": 2130,
+          "y": 353,
+          "w": 165,
+          "h": 28
+        }
+      ],
+      "enemies": [],
+      "objects": [
+        {
+          "id": "escape-log-1",
+          "type": "log",
+          "x": 450,
+          "y": 417,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "value": "escape",
+          "label": "접속 로그 · 클릭 / rm"
+        },
+        {
+          "id": "escape-log-2",
+          "type": "log",
+          "x": 1080,
+          "y": 417,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "value": "escape",
+          "label": "접속 로그 · 클릭 / rm"
+        },
+        {
+          "id": "escape-gate",
+          "type": "gate",
+          "x": 1780,
+          "y": 314,
+          "w": 34,
+          "h": 146,
+          "active": true,
+          "value": "sudo",
+          "label": "임시 성문 · sudo"
+        },
+        {
+          "id": "escape-log-3",
+          "type": "log",
+          "x": 2200,
+          "y": 417,
+          "w": 32,
+          "h": 44,
+          "active": true,
+          "value": "escape",
+          "label": "접속 로그 · 클릭 / rm"
+        },
+        {
+          "id": "escape-exit",
+          "type": "exit",
+          "x": 2740,
+          "y": 330,
+          "w": 78,
+          "h": 130,
+          "active": true,
+          "label": "로그아웃 · F"
+        }
+      ]
+    }
+  ],
+  "endings": {
+    "black": {
+      "id": "black",
+      "title": "검은 심판",
+      "badge": "흑철 귀면 마패",
+      "text": "소도는 마지막 불꽃과 함께 사라졌다. 설매화는 자유를 얻었지만, 돌아갈 도시는 남지 않았다.",
+      "report": [
+        "[REMOVE_COMPLETE]",
+        "커널 상태: DOWN · Kernel Panic",
+        "관리자 계정: [REDACTED]",
+        "복구 데이터: 없음",
+        "Exit Code: 0 — Success"
+      ]
+    },
+    "white": {
+      "id": "white",
+      "title": "다시 피어난 소도",
+      "badge": "황금 오마패",
+      "text": "푸른 해치는 마패 앞에 고개를 숙였다. 하얀 해태가 아버지의 모습으로 빛났다. “매화야, 네가 소도를 다시 꽃피웠구나.”",
+      "report": [
+        "[RESTORATION_COMPLETE]",
+        "커널 상태: STABLE · Authenticated by Creator",
+        "관리자 계정: 설매화",
+        "설계자의 유산: 정당한 후계자에게 계승",
+        "환영합니다, 관리자님."
+      ]
+    },
+    "gray": {
+      "id": "gray",
+      "title": "이름 없는 바람",
+      "badge": "낡은 청동 마패",
+      "text": "세 마리의 말이 해치를 진정시켰다. 소도는 복구되었고 매화는 대가를 챙겨 떠났다. 그녀의 이름은 가장 깊은 주석으로 남았다.",
+      "report": [
+        "[RESTORATION_COMPLETE]",
+        "커널 상태: OPTIMIZED · New Era",
+        "관리자 계정: UNDEFINED",
+        "접속 세션: Ghost Session",
+        "당신은 소도의 주석으로 남았습니다."
+      ]
+    }
+  },
+  "tutorials": {
+    "red": {
+      "index": 0,
+      "title": "주작 · 기본 탄과 강화 탄",
+      "intro": "옥추선의 기억을 펼칩니다. 안전한 연습을 마치면 이 자리에서 모험을 이어갑니다.",
+      "summary": "좌클릭은 기본 탄, 우클릭은 강화 탄입니다. 마우스로 조준하세요. 우클릭은 강화도 자동 준비합니다. 주작 강화 15초, 종료 후 냉각 30초. Q 화염탄은 기력 20. 벽과 사물에 닿으면 탄이 소멸합니다.",
+      "steps": [
+        {
+          "key": "좌클릭",
+          "action": "attack",
+          "title": "먼저, 부채로 한 번",
+          "description": "표적에 마우스를 올리고 좌클릭하세요. 마우스 방향으로 부채 탄이 날아갑니다. 기력 소모는 없고 벽이나 사물에 닿으면 멈춥니다.",
+          "goal": "연습 표적을 조준하고 좌클릭하세요.",
+          "target": "dummy"
+        },
+        {
+          "key": "1 → Q",
+          "action": "cast",
+          "title": "Q 화염탄의 위력 비교",
+          "description": "휠 또는 1로 주작을 고르세요. 휠 위는 앞 번호, 아래는 뒷 번호입니다. 미획득 부적은 건너뛰고 순환합니다. 표적을 조준하고 Q로 더 강한 화염탄을 쏘세요. 한 발에 기력 20입니다.",
+          "goal": "두 표적에 각각 Q 화염탄을 맞히세요.",
+          "target": "range"
+        },
+        {
+          "key": "E",
+          "action": "enchant",
+          "title": "이번에는 부채에 힘을 담기",
+          "description": "주작을 고르고 E. 공격 없이 15초 동안 부채에 불을 담습니다. 실전에서는 우클릭으로 강화와 발사를 함께 할 수도 있습니다. 손과 부채의 붉은 빛을 보세요.",
+          "goal": "주작 E로 인챈트하세요."
+        },
+        {
+          "key": "우클릭",
+          "action": "enhancedAttack",
+          "title": "우클릭으로 달라진 위력",
+          "description": "표적을 조준하고 우클릭하세요. 기본 탄 22보다 강한 약 37 피해와 3초 화상을 줍니다. 좌클릭은 강화 중에도 기본 탄입니다.",
+          "goal": "우클릭 강화 탄으로 표적을 맞히세요.",
+          "target": "dummy",
+          "buff": "red"
+        }
+      ]
+    },
+    "blue": {
+      "index": 1,
+      "title": "청룡 · 찾고, 빠르게 움직이기",
+      "intro": "함께 가져온 청룡도 깨워 봅시다. 주작과 달리 Q는 주변을 탐지합니다.",
+      "summary": "청룡 Q: 8초 탐지. E: 12초 동안 이동이 약 35% 빨라지고 대시는 약 42% 멀리 나갑니다. 우클릭도 더 빠르게 연타합니다. 끝난 뒤 냉각 30초.",
+      "steps": [
+        {
+          "key": "2 → Q",
+          "action": "cast",
+          "title": "청룡으로 흔적 찾기",
+          "description": "청룡(2)을 선택하고 Q. 공격 파동 대신 주변의 숨은 길과 환영을 8초 동안 드러냅니다.",
+          "goal": "청룡 Q로 숨은 표적을 드러내세요.",
+          "target": "hidden"
+        },
+        {
+          "key": "E",
+          "action": "enchant",
+          "title": "발걸음에 전류를 담기",
+          "description": "청룡 E는 이동 강화입니다. 12초 동안 이동과 대시가 빨라지고 우클릭을 더 빠르게 잇습니다.",
+          "goal": "청룡 E로 이동을 강화하세요."
+        },
+        {
+          "key": "Shift",
+          "action": "dash",
+          "title": "길어진 대시 체험",
+          "description": "좌우로 움직여 속도를 느끼고 Shift로 대시하세요. 이동은 약 35% 빨라지고 대시는 약 42% 멀리 나갑니다.",
+          "goal": "청룡 인챈트 중 Shift로 대시하세요.",
+          "buff": "blue"
+        }
+      ]
+    },
+    "white": {
+      "index": 2,
+      "title": "백호 · 드러내고, 모습을 감추기",
+      "intro": "새 부적이 기억을 전합니다. 백호의 Q와 E는 서로 다른 역할입니다.",
+      "summary": "백호 Q: 숨은 길과 환영을 12초 탐지. E: 최대 15초 은신, 다음 우클릭 피해 2배. 공격하면 은신이 끝나고 냉각 30초. 보스는 은신을 꿰뚫습니다.",
+      "steps": [
+        {
+          "key": "3 → Q",
+          "action": "cast",
+          "title": "진실을 드러내기",
+          "description": "백호(3)의 Q는 숨은 표적을 12초 드러냅니다. 환영 보스에게 공격이 닿지 않으면 먼저 스캔하세요.",
+          "goal": "백호 Q로 숨은 표적을 찾으세요.",
+          "target": "hidden"
+        },
+        {
+          "key": "E",
+          "action": "enchant",
+          "title": "이번에는 내가 숨기",
+          "description": "백호 E로 모습이 흐려집니다. 일반 적은 나를 놓치지만 보스는 감지합니다. 다음 우클릭은 두 배의 피해를 줍니다.",
+          "goal": "백호 E로 은신하세요."
+        },
+        {
+          "key": "우클릭",
+          "action": "enhancedAttack",
+          "title": "은신을 치명타로 바꾸기",
+          "description": "은신 중 표적을 조준하고 우클릭. 기본 22가 44로 오릅니다. 공격하는 순간 은신을 소비합니다.",
+          "goal": "은신 중 우클릭으로 표적을 맞히세요.",
+          "target": "dummy",
+          "buff": "white"
+        }
+      ]
+    },
+    "black": {
+      "index": 3,
+      "title": "현무 · 방패와 갑옷",
+      "intro": "현무가 안전한 연습탄을 띄웁니다. 실제 체력은 줄지 않습니다.",
+      "summary": "현무 Q: 5초 방패와 탄 반사. E: 12초 받는 피해 60% 감소, 탄 반사와 근접 반격. 끝난 뒤 냉각 30초.",
+      "steps": [
+        {
+          "key": "4 → Q",
+          "action": "cast",
+          "title": "다가오는 탄을 되돌리기",
+          "description": "현무(4)를 고르고 Q. 5초 방패를 펼칩니다. 연습탄이 방패에 닿으면 날아온 쪽으로 튕깁니다.",
+          "goal": "현무 Q로 연습탄을 반사하세요.",
+          "target": "projectile"
+        },
+        {
+          "key": "E",
+          "action": "enchant",
+          "title": "방패 대신 몸에 두르기",
+          "description": "현무 E는 12초 갑옷입니다. 방패와 달리 근접 피해를 완전히 막지 않고 60% 줄입니다. 연습 근접 충격으로 10→4를 확인합니다.",
+          "goal": "현무 E를 켜고 연습 근접 충격의 10→4를 확인하세요."
+        }
+      ]
+    },
+    "white-evolved": {
+      "index": 2,
+      "title": "백호 각성 · 권한의 문",
+      "intro": "백호가 새로운 권한을 얻었습니다. 달라진 Q와 E를 확인합시다.",
+      "summary": "각성 백호 Q: 가까운 보안문을 양심 손실 없이 개방. E: 은신 30초, 치명타 우클릭 뒤에도 1초 유지. 종료 후 냉각 30초.",
+      "steps": [
+        {
+          "key": "3 → Q",
+          "action": "cast",
+          "title": "부수지 않고 문 열기",
+          "description": "각성한 백호(3)의 Q는 탐지와 함께 가까운 보안문을 엽니다. 주작 폭파와 달리 기록과 양심을 지킵니다.",
+          "goal": "백호 Q로 연습 보안문을 여세요.",
+          "target": "gate"
+        },
+        {
+          "key": "E",
+          "action": "enchant",
+          "title": "30초로 길어진 은신",
+          "description": "각성한 백호 E는 30초 지속됩니다. 상태 표시에서 시간을 확인하세요. 냉각은 여전히 종료 후 30초입니다.",
+          "goal": "각성 백호 E로 은신하세요."
+        },
+        {
+          "key": "우클릭",
+          "action": "enhancedAttack",
+          "title": "공격 뒤 한순간 더",
+          "description": "치명타 우클릭 뒤에도 1초 동안 은신이 남습니다. 일반 백호와의 차이입니다.",
+          "goal": "은신 중 우클릭으로 연습 표적을 맞히세요.",
+          "target": "dummy",
+          "buff": "white"
+        }
+      ]
+    },
+    "gold": {
+      "index": 4,
+      "title": "기린 · 마지막 선택의 열쇠",
+      "intro": "기린은 공격용 부적이 아닙니다. 국본을 쓰러뜨린 뒤 루트 코어에서 사용합니다.",
+      "summary": "기린은 Q 공격과 E 인챈트가 없는 코어 열쇠입니다. 국본 격파 → 코어 접근 → Q 또는 F → 삭제/정화 선택.",
+      "steps": [
+        {
+          "key": "5",
+          "action": "select",
+          "title": "열쇠를 손에 들기",
+          "description": "기린(5)을 선택하세요. 좌클릭 기본 공격은 그대로 사용할 수 있지만 기린에는 공격 기술이나 인챈트가 없습니다.",
+          "goal": "5 또는 휠로 기린을 선택하세요."
+        },
+        {
+          "key": "Q",
+          "action": "inspect",
+          "title": "코어의 조건 확인하기",
+          "description": "연습 코어에 Q를 눌러 잠금 조건을 확인하세요. 실제 선택은 국본을 쓰러뜨리고 루트 코어에 도착했을 때 열립니다.",
+          "goal": "Q로 코어 잠금 조건을 확인하세요.",
+          "target": "gate"
+        }
+      ]
+    }
+  }
+}
